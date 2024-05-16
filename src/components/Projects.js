@@ -5,7 +5,7 @@ import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
 
 import { ProjectCard } from "./ProjectCard";
 
-import color2 from '../assets/img/color2.png'
+import color2 from "../assets/img/color2.png";
 
 export const Projects = () => {
   const projects = [
@@ -71,7 +71,7 @@ export const Projects = () => {
     },
   ];
   return (
-    <section className="projects" id="projects">
+    <section className="project" id="project">
       <Container>
         <Row>
           <Col>
@@ -83,12 +83,12 @@ export const Projects = () => {
               type and scrambled it to make a type specimen book.
             </p>
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
-              <Nav variant="pills" defaultActiveKey="/home">
+              <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                 <Nav.Item>
                   <Nav.Link eventKey="first">Tab One</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="seconsd">Tab Two</Nav.Link>
+                  <Nav.Link eventKey="second">Tab Two</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="third">Tab Three</Nav.Link>
@@ -96,19 +96,15 @@ export const Projects = () => {
               </Nav>
 
               <Tab.Content>
-                <Tab.Pane eventKey='first'>
+                <Tab.Pane eventKey="first">
                   <Row>
-                    {
-                      projects.map((project,index) => {
-                        return(
-                          <ProjectCard key={index} {...project}/>
-                        )
-                      })
-                    }
+                    {projects.map((project, index) => {
+                      return <ProjectCard key={index} {...project} />;
+                    })}
                   </Row>
                 </Tab.Pane>
-                <Tab.Pane eventKey='second'>Lorem Ipsum</Tab.Pane>
-                <Tab.Pane eventKey='third'>Lorem Ipsum</Tab.Pane>
+                <Tab.Pane eventKey="second">Lorem Ipsum</Tab.Pane>
+                <Tab.Pane eventKey="third">Lorem Ipsum</Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </Col>
