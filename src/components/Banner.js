@@ -9,7 +9,7 @@ export const Banner = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const toRotate = ["HTML", "CSS", "React", "Javascript", "SASS"];
-  const period = 2000;
+  const period = 1000;
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -19,7 +19,7 @@ export const Banner = () => {
     return () => {
       clearInterval(ticker);
     };
-  }, [text, delta, isDeleting]);
+  }, [text]);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -50,7 +50,7 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <span className="tagline">Welcome to my Portfolio</span>
             <h1>
-              {`Hi I'm webdecoded`} <span className="wrap">{text}</span>
+              {`Hi I'm webdecoded `} <span className="wrap">{text}</span>
             </h1>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
